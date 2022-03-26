@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfood/pages/food/food_list_page.dart';
+import 'package:flutterfood/pages/login/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -10,36 +14,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FLUTTER FOOD',
+      title: 'Flutter Food',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: const _HomePage(),
-    );
-  }
-}
-
-class _HomePage extends StatelessWidget {
-  const _HomePage({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('FLUTTER FOOD'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text('LOAD FOOD DATA'),
-              ),
-            ),
-          ],
+        primarySwatch: Colors.purple,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        textTheme: const TextTheme(
+          headline1: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+          ),
+          headline6: TextStyle(
+            fontSize: 22.0,
+            //fontWeight: FontWeight.bold,
+          ),
+          bodyText2: TextStyle(
+            fontSize: 14.0,
+          ),
         ),
       ),
+      home: const FoodListPage(),
     );
   }
 }
